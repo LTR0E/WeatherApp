@@ -22,7 +22,8 @@ def get_weather(city, country):
                 'temp': data['main']['temp'],
                 'desc': data['weather'][0]['description'].capitalize(),
                 'wind': data['wind']['speed'],
-                'humidity': data['main']['humidity']
+                'humidity': data['main']['humidity'],
+                'condition_id': data['weather'][0]['id']
             }
         return {'error': data.get('message', 'Error fetching weather data')}
     except requests.exceptions.RequestException as e:
@@ -35,6 +36,30 @@ def timeofday():
     elif 12 <= hour < 18:
         return "nice afternoon"
     return "nice evening"
+
+def get_weather_icon(condition_id):
+    if 200 <= condition_id <= 232:
+        return 'wi wi-thunderstorm'
+    elif 300 <= condition_id <= 321:
+        return 'wi wi-sprinkle'
+    elif 500 <= condition_id <= 531:
+        return 'wi wi-rain'
+    elif 600 <= condition_id <= 622:
+        return 'wi wi-snow'
+    elif 701 <= condition_id <= 781:
+        return 'wi wi-fog'
+    elif condition_id == 800:
+        return 'wi wi-day-sunny'
+    elif condition_id == 801:
+        return 'wi wi-day-cloudy'
+    elif 802 <= condition_id <= 804:
+        return 'wi wi-cloudy'
+    else:
+        return 'wi wi-alien'
+    
+@app.context_processor
+def utility_processor():
+    return dict(get_weather_icon=get_weather_icon)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():

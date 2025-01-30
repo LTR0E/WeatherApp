@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,500;1,500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
+
 body {
     display: flex;
     flex-direction: column;
@@ -12,7 +14,7 @@ body {
     text-align: center;
     gap: 30px;
     height: 100vh;
-    font-size: 1.2rem;
+    font-family: Poppins, sans-serif;
 
 }
 
@@ -21,7 +23,9 @@ form {
     flex-direction: column;
     gap: 5px;
     font-size: 1.2rem;
+    max-width: 300px;
 }
+
 label {
     font-size: 2rem;
 }
@@ -52,7 +56,10 @@ input {
     transition: all 0.1s ease-in-out;   
     
 }
-
+input:focus {
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.3);
+    outline: none;
+}
 button {
     padding: 10px;
     background-color: #007bff;
@@ -65,6 +72,7 @@ button {
 
 button:hover {
     background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
 #weather {
@@ -72,6 +80,7 @@ button:hover {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     text-align: justify;
+    font-size: 1.5rem;
 }
 
 @media (min-width: 768px) {

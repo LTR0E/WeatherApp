@@ -2,6 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css" rel="stylesheet">
     <title>Weather Result</title>
 </head>
 <body>
@@ -9,6 +10,7 @@
     {% if weather.error %}
         <p style="color: red">Error: {{ weather.error }}</p>
     {% else %}
+        <i class="{{ get_weather_icon(weather.condition_id) }}"></i>
         <p id = "weather">
             <strong>City:</strong> {{ weather.city }} <strong>Country:</strong> {{ weather.country }}<br>
             <strong>Temperature:</strong> {{ weather.temp }}°C<br>
