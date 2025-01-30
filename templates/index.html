@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Weather Service</title>
+</head>
+<body>
+    <h1>Weather Service</h1>
+    
+    <form method="POST">
+        <label for="city">City:</label>
+        <input type="text" name="city" required>
+        <br>
+        <label for="country">Country Code (e.g., US):</label>
+        <input type="text" name="country" maxlength="2">
+        <br>
+        <button type="submit">Get Weather</button>
+    </form>
+</body>
+</html>
