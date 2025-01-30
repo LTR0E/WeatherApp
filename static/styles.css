@@ -83,16 +83,7 @@ button:hover {
     font-size: 1.5rem;
 }
 
-.weather-icon {
-    font-size: 4rem;
-    margin: 20px 0;
-}
 
-/* For weather icons library */
-.wi {
-    font-size: 4rem;
-    margin: 20px 0;
-}
 #greeting-end {
     padding: 10px;
     margin: 0;
@@ -114,4 +105,11 @@ button:hover {
     #weather {
         grid-template-columns: 2fr 1fr;
     }
+    .wi {
+        font-size: 6rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    
 }
