@@ -6,10 +6,9 @@ body {
     align-items: center;
     justify-content: center;
     font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
     margin: 0;
     padding: 0;
-    background-color: rgb(56, 56, 56);
+    background-image: -webkit-linear-gradient(90deg, #141e30 0%, #243b55 100%);
     color: white;
     text-align: center;
     gap: 30px;
@@ -36,11 +35,13 @@ label {
     transition: all 0.2s ease-in-out;
     font-size: 1.2rem;
     padding: 10px;
+    
 }
 
 #back:hover {
     color: #0056b3;
     text-decoration: underline;
+    transform: translate(0, -2px);
 }
 
 input {
@@ -90,7 +91,7 @@ button:hover {
 }
 @media (min-width: 768px) {
     body {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     
     form {
@@ -108,8 +109,4 @@ button:hover {
     .wi {
         font-size: 6rem;
     }
-}
-
-@media screen and (max-width: 600px) {
-    
 }
